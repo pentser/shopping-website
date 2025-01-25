@@ -1,5 +1,6 @@
 import express from "express";
 import User from "../models/User.js";
+import CryptpJS from "crypto-js";
 
 const router= express.Router();
 
@@ -8,15 +9,15 @@ router.post("/register",async (req,res)=>{
     const newUser= new User({
         username:req.body.username,
         email:req.body.email,
-        password:req.body.password
+        password:CryptpJS.AES.encrypt(req.body.password,process.env.PASS_SECRET).toString()
     })
 
     try {
 
         const savedUser = await newUser.save();
-        res.status(201).json(saveUser);
+        res.status(201).json(savedUser);
     } catch(err) {
-        ewa.status(500).json(err);
+        res.status(500).json(err);
     }
 
 })
