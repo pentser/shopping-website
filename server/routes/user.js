@@ -4,7 +4,7 @@ import express from "express";
 import {
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
-} from ("./verifyToken.js");
+} from "./verifyToken.js";
 
 const router = express.Router();
 

@@ -9,7 +9,7 @@ const OrderSchema = new mongoose.Schema({
             type:String
         },
         quantity:{
-            type:number,
+            type:Number,
             default:1
         }
        }
@@ -22,4 +22,4 @@ const OrderSchema = new mongoose.Schema({
 ,
 {timestamps:true});
 
-export default mongoose.model("Order",CartSchema);
+export default mongoose.model("Order",OrderSchema);
