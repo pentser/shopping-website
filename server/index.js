@@ -33,6 +33,6 @@ app.use("/api/orders", orderRoute);
 
 const PORT= process.env.PORT|| 3001;
 app.listen(PORT,()=>{
-    console.log(`erver is running on port: ${PORT}`);
+    console.log(`Server is running on port: ${PORT}`);
 })
 
