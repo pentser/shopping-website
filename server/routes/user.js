@@ -1,5 +1,6 @@
 import  User from "../models/User.js"
 import express from "express";
+import CryptoJS from "crypto-js";
 
 import {
   verifyTokenAndAuthorization,

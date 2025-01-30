@@ -40,7 +40,7 @@ router.post("/login",async (req,res)=>{
         passwordS!==req.body.password &&  res.status(401).json("Worng credentials");
 
         const accessToken =jwt.sign({
-            id:user.id,
+            id:user._id,
             isAdmin:user.isAdmin
         },process.env.JWT_SECRET,{expiresIn:"3d"});
     
